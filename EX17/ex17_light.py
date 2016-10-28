@@ -1,0 +1,1 @@
+from sys import argv ; from os.path import exists ; script, from_file, to_file = argv ; indata = open(from_file).read() ; out_file = open(to_file, 'w') ; out_file.write(indata) ; out_file.close() # He said it's important to close files when you're done but it seems to work fine without this line
