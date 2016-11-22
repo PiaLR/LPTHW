@@ -1,42 +1,48 @@
-lexicon = [('direction', 'north'), ('direction', 'south'),  ('direction', 'east'),
-            ('direction', 'west'), ('direction', 'down'), ('direction', 'up'),
-            ('direction', 'left'), ('direction', 'right'), ('direction', 'back')]
-stuff = raw_input('> ')
-words = stuff.split()
+lexicon = {
+    'north': 'direction',
+    'south': 'direction',
+    'east': 'direction',
+    'west': 'direction',
+    'down': 'direction',
+    'up': 'direction',
+    'left': 'direction',
+    'right': 'direction',
+    'back': 'direction',
+    'go': 'verb',
+    'stop': 'verb',
+    'kill': 'verb',
+    'eat': 'verb',
+    'the': 'stop',
+    'in': 'stop',
+    'of': 'stop',
+    'from': 'stop',
+    'at': 'stop',
+    'it': 'stop',
+    'door': 'noun',
+    'bear': 'noun',
+    'princess': 'noun',
+    'cabinet': 'noun',
+            }
 
-first_word = ()
-second_word = ()
-third_word = ()
+def scan(sentence):
+    words = sentence.split()
+    result = []
 
-sentence = [first_word, second_word, third_word]
+    for word in words:
+        try:
+            pair = (lexicon[word], word)
+            result.append(pair)
+        except KeyError:
+            try:
+                int(word)
+                number = ('number', int(word))
+                result.append(number)
+            except ValueError:
+                error = ('error', word)
+                result.append(error)
 
-class Lexicon(object):
+#    print result # uncommand this to test file on its own
 
-    #def __init__(self):
-        #self.name = name
+    return result
 
-
-
-    #number = []
-
-# should scan lexicon for given input 'north' and find and return 'direction' 'north'
-    def scan(self, stuff):
-            #stuff = raw_input('> ')
-            #words = stuff.split()
-            direction = ['north', 'south', 'east', 'west', 'down', 'up', 'left', 'right', 'back']
-            verb = ['go', 'stop', 'kill', 'eat']
-            stop = ['the', 'in', 'of', 'from', 'at', 'it']
-            noun = ['door', 'bear', 'princess', 'cabinet']
-            #print stuff
-            if stuff in direction:
-                word = [('direction', stuff)]
-                print word
-            #elif stuff in verb:
-                #word = ('verb', stuff)
-                #print word
-            else:
-                print "no"
-
-#test = Input()
-#lexicon = Lexicon()
-#lexicon.scan("north")
+#scan("north 1234 east") # uncommand this to test file on its own
