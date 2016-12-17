@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>Sample Web Form</title>
+  <style type="text/css">
+  .auto-style1 {
+	  font-family: "French Script MT";
+	  color: #FF00FF;
+  }
+  .auto-style2 {
+	  font-family: "French Script MT";
+	  font-size: large;
+  }
+  </style>
+</head>
+<body>
+{% extends "layout.html" %}
+{% block bodycontent %}
+<h1 class="auto-style1">Please, fill out this beautiful form</h1>
+
+<form action="/hello" method="POST">
+    <span class="auto-style2">How would you like me to greet you?</span> <input type="text" name="greet">
+  <br />
+    <span class="auto-style2">What is your beautiful name?</span>&nbsp; <input type="text" name="name">
+  <br />
+  <input type="submit">
+</form>
+{% endblock %}
+</body>
+</html>

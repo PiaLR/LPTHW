@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <title> Fancy Website </title>
+</head>
+<body bgcolor="#FFFF45">
+  {% if start %}
+  <em style="color: green; font-size: 2em;">{{ start }}</em>
+  Write content
+  <b> in bold </b>
+  <i> or italic </i>
+  <br> or a new line
+  <u> or underlined. </u>
+  <p> Make a new paragraph - and look at that fancy thing: <p>
+  <hr color="CC00CC">
+  <h1> Here's another headline </h1>
+  And another paragraph <p> &amp; <font color="#00FF45">a new even more cool paragraph</font>
+  <ol><li> A list <li> very practical <ol><li> nested </ol><ul><li> nested and subordinated </ul><li> this is the last point </ol>
+
+  {% else %}
+  <h1> Look at that fancy table: </h1>
+  <table border>
+    <tr>
+      <td align=right>1111000000
+        <td align=left>binary
+    <tr>
+      <td align=right>370
+      <td align=left>octal
+    <tr>
+      <td align=right>7C0
+        <td align=left>hexadecimal
+    <tr>
+      <td align=right>1984
+      <td align=left>decimal
+  </table>
+  {% endif %}
+  <br>
+  <a href=https://www.google.de/?gws_rd=ssl> And here's a link to Google </a>
+</body>
+</html>

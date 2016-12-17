@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Gothons Of Planet Percal #25</title>
+    <style type="text/css">
+	.auto-style1 {
+		font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	}
+	.auto-style2 {
+		font-size: medium;
+		color: fuchsia;
+	}
+	.auto-style3 {
+		font-weight: normal;
+		color: #0000FF;
+		font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+	}
+	</style>
+  </head>
+<body>
+  {% extends "layout.html" %}
+  {% block bodycontent %}
+  {% if greet %}
+    <span class="auto-style1"><strong><span class="auto-style2">I just wanted to say
+  </span></strong> <em class="auto-style2"><strong>{{ greet }}</strong></em></span>
+    <br>
+    <a href=http://localhost:5000/hello> Go back </a>
+  {% else %}
+    <h1 class="auto-style3"><em>Hallo Welt!</em></h1>
+  {% endif %}
+  {% endblock %}
+</body>
+</html>
